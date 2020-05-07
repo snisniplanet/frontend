@@ -1,0 +1,11 @@
+$backgrounds: 'waves', 'tornado';
+
+@each $bg in $backgrounds {
+  .has-#{$bg}-background{
+    background-image: url(~assets/img/backgrounds/#{$bg}.svg);
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+}

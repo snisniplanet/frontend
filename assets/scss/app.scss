@@ -1,0 +1,9 @@
+@import 'variables';
+@import "fonts";
+
+// Import Bulma and Buefy styles
+@import "~bulma";
+@import "~buefy/src/scss/buefy";
+
+// Additional rules
+@import "addons";

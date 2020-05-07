@@ -1,0 +1,80 @@
+@import 'addons/glow';
+@import 'addons/slide';
+@import 'addons/backgrounds';
+
+body {
+  &::-webkit-scrollbar {
+    width: 0.5em;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $primary;
+    border-radius: 1em;
+  }
+}
+
+.footer {
+  color: $white-ter;
+}
+
+.has-shadow {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+
+  &-centered {
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.is-rounded {
+  border-radius: $radius-large !important;
+
+  &.has-children > *, &.image > img {
+    border-radius: $radius-large;
+  }
+}
+
+.is-fullheight {
+  height: 100% !important;
+}
+
+.title {
+  &.is-0 {
+    font-size: 100px !important;
+  }
+}
+
+.intersection{
+  .intersection-top{
+    padding-bottom: +$intersection;
+  }
+
+
+  .intersection-bottom{
+    margin-top: -$intersection;
+  }
+}
+
+.is-content {
+  p {
+    margin: $spacing 0;
+  }
+}
+
+.sticky-top {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.is-escaping {
+  margin: -$spacing;
+}
+
+.has-spacing {
+  margin: $spacing;
+}

@@ -1,0 +1,42 @@
+// Customize
+$min-glow: 10px;
+$max-glow: 70px;
+$loop-duration: 1s;
+$stroke-width: 3px;
+$min-color: $primary;
+$max-color: lighten($primary, 5%);
+
+.glow {
+  color: $white-ter;
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+
+  &.is-still {
+    animation: none;
+    text-shadow: 0 0 10px $white-ter, 0 0 20px $white-ter, 0 0 30px $min-color, 0 0 40px $min-color, 0 0 50px $min-color, 0 0 60px $min-color, 0 0 70px $min-color;
+
+    &.is-max {
+      text-shadow: 0 0 20px $white-ter, 0 0 30px $max-color, 0 0 40px $max-color, 0 0 50px $max-color, 0 0 60px $max-color, 0 0 70px $max-color, 0 0 80px $max-color;
+    }
+  }
+
+  &.is-light{
+    color: transparent !important;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: $white-ter;
+  }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px $white-ter, 0 0 20px $white-ter, 0 0 30px $min-color, 0 0 40px $min-color, 0 0 50px $min-color, 0 0 60px $min-color, 0 0 70px $min-color;
+  }
+
+  to {
+    text-shadow: 0 0 20px $white-ter, 0 0 30px $max-color, 0 0 40px $max-color, 0 0 50px $max-color, 0 0 60px $max-color, 0 0 70px $max-color, 0 0 80px $max-color;
+  }
+}
+
+@keyframes flicker {}
