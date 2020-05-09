@@ -4,6 +4,10 @@
   "description": "The client side of SNISNI",
   "author": "Mattia Sinisi",
   "private": true,
+  "engines": {
+    "node": "13",
+    "npm": "6.14.4"
+  },
   "scripts": {
     "prod": "npm run build && npm run start",
     "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
@@ -20,7 +24,9 @@
     "cross-env": "^5.2.0",
     "express": "^4.16.4",
     "nuxt": "^2.0.0",
-    "nuxt-buefy": "^0.3.2"
+    "nuxt-buefy": "^0.3.2",
+    "tiptap": "^1.27.1",
+    "tiptap-extensions": "^1.29.1"
   },
   "devDependencies": {
     "@nuxt/typescript-build": "^0.6.0",
