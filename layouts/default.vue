@@ -24,8 +24,12 @@
 
       <template #end>
         <b-navbar-item tag="div">
-          <nuxt-link to="#" class="button is-primary has-spacing">Login</nuxt-link>
-          <nuxt-link to="#" class="button is-sencondary is-light has-spacing">Register</nuxt-link>
+          <nuxt-link to="#" class="button is-primary has-spacing"
+            >Login</nuxt-link
+          >
+          <nuxt-link to="#" class="button is-sencondary is-light has-spacing"
+            >Register</nuxt-link
+          >
         </b-navbar-item>
       </template>
     </b-navbar>
@@ -40,22 +44,13 @@
       <div class="container">
         <section class="columns">
           <aside class="column">
-            <a
-              v-for="link in links"
-              :key="link.href"
-              class="is-block"
-              :href="link.href"
-            >
-              <b-icon :icon="link.icon"></b-icon>
-              <span>{{ link.name }}</span>
-            </a>
+            <CoolLink v-for="link in links" :key="link.href" :to="link.href" :icon="link.icon">{{link.name}}</CoolLink>
           </aside>
 
           <aside class="column">
-            <a class="is-block" href="#">
-              <b-icon icon="user" pack="fas"></b-icon>
-              <span>Privacy</span>
-            </a>
+            <CoolLink to="#" icon="lock">Privacy Policy</CoolLink>
+
+            <CoolLink to="#" icon="bug_report">Spotted a bug?</CoolLink>
           </aside>
 
           <aside class="column">
@@ -83,10 +78,12 @@
 <script>
 import { links } from '~/snisni.config.json'
 
+import CoolLink from '~/components/CoolLink'
 import BuyMeACoffee from '~/components/BuyMeACoffee'
 
 export default {
   components: {
+    CoolLink,
     BuyMeACoffee
   },
 
