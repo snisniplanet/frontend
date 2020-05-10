@@ -78,3 +78,7 @@ body {
 .has-spacing {
   margin: $spacing;
 }
+
+[contenteditable="true"]:focus {
+  outline: none;
+}
