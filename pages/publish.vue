@@ -20,7 +20,7 @@
 
     <div class="container">
       <no-ssr>
-        <editor-menu-bar :editor="editor" v-slot="{ commands, isActive }">
+        <editor-menu-bar v-slot="{ commands, isActive }" :editor="editor">
           <div>
             <button
               class="button is-light"
@@ -65,7 +65,7 @@
         </editor-menu-bar>
 
         <div class="has-shadow">
-          <editor-content :editor="editor" class="editor"/>
+          <editor-content :editor="editor" class="editor" />
         </div>
       </no-ssr>
     </div>
@@ -93,7 +93,7 @@ export default {
         new Blockquote(),
         new Code(),
         new CodeBlock(),
-        new Italic(),
+        new Italic()
       ]
     })
   },
@@ -104,7 +104,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.editor{
+.editor {
   padding: 10px 20px;
 }
 </style>

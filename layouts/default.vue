@@ -44,7 +44,13 @@
       <div class="container">
         <section class="columns">
           <aside class="column">
-            <CoolLink v-for="link in links" :key="link.href" :to="link.href" :icon="link.icon">{{link.name}}</CoolLink>
+            <CoolLink
+              v-for="link in links"
+              :key="link.href"
+              :to="link.href"
+              :icon="link.icon"
+              >{{ link.name }}</CoolLink
+            >
           </aside>
 
           <aside class="column">

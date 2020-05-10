@@ -2,8 +2,14 @@
   <div class="level">
     <div class="level-left">
       <div class="level-item">
-        <component :is="component" class="is-block" :to="to" :href="to" noopener>
-          <span  class="has-text-centered">
+        <component
+          :is="component"
+          class="is-block"
+          :to="to"
+          :href="to"
+          noopener
+        >
+          <span class="has-text-centered">
             <b-icon v-if="icon" :icon="icon"></b-icon>
             <span>
               <slot></slot>
@@ -26,7 +32,7 @@ export default {
     }
   },
   computed: {
-    component(){
+    component() {
       return this.internal && this.to ? 'nuxt-link' : 'a'
     }
   }
