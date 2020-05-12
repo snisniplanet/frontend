@@ -12,14 +12,25 @@
           tag="nuxt-link"
           exact-active-class="has-text-primary"
           :to="{ name: 'articles' }"
-          >Articles</b-navbar-item
         >
-        <b-navbar-item tag="nuxt-link" exact-active-class="is-active" to="#"
-          >Developer Blog</b-navbar-item
+          Articles
+        </b-navbar-item>
+
+        <b-navbar-item
+          tag="nuxt-link"
+          exact-active-class="has-text-primary"
+          :to="{ name: 'blogs' }"
         >
-        <b-navbar-item tag="nuxt-link" exact-active-class="is-active" to="#"
-          >API</b-navbar-item
+          Blogs
+        </b-navbar-item>
+
+        <b-navbar-item
+          tag="nuxt-link"
+          exact-active-class="has-text-primary"
+          to="#"
         >
+          API
+        </b-navbar-item>
       </template>
 
       <template #end>
