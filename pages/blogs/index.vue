@@ -19,8 +19,6 @@ export default {
     Banner
   },
 
-  middleware: ['blogs'],
-
   data(){
     return {
       blogs: []
