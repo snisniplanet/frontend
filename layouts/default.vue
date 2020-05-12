@@ -3,7 +3,7 @@
     <b-navbar wrapper-class="container" class="sticky-top">
       <template #brand>
         <b-navbar-item tag="nuxt-link" :to="{ path: '/' }">
-          <h1 class="title">SNI</h1>
+          <p class="title">SNI</p>
         </b-navbar-item>
       </template>
 
