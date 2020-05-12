@@ -17,6 +17,14 @@ import Banner from '~/components/Banner'
 export default {
   components: {
     Banner
-  }
+  },
+
+  middleware: ['blogs'],
+
+  data(){
+    return {
+      blogs: []
+    }
+  },
 }
 </script>
