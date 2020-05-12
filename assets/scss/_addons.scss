@@ -18,7 +18,12 @@ body {
 }
 
 .footer {
-  color: $white-ter;
+  background: linear-gradient($footer-background-color, $white);
+
+  &.is-dark{
+    background: $dark;
+    color: $white-ter !important;
+  }
 }
 
 .has-shadow {

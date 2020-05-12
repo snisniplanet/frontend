@@ -51,7 +51,7 @@
       </div>
     </section>
 
-    <section class="footer is-dark">
+    <section class="footer">
       <div class="container">
         <section class="columns">
           <aside class="column">
