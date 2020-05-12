@@ -1,13 +1,14 @@
 <template>
   <div>
-    <div class="hero is-small">
-      <div class="hero-body">
-        <div class="section container">
-          <p class="title is-1">Our top articles 🔥</p>
-          <p>See what has made the list today</p>
-        </div>
-      </div>
-    </div>
+    <Banner>
+      <template #title>
+        Our top articles 🔥
+      </template>
+
+      <template #subtitle>
+        See what has made the list today
+      </template>
+    </Banner>
     <section class="section container">
       <article
         v-for="n in 5"
@@ -55,9 +56,14 @@
 </template>
 
 <script>
+import Banner from '~/components/Banner'
+
 export default {
   name: 'HomePage',
 
+  components: {
+    Banner
+  },
   mounted() {
     this.$buefy.toast.open({
       message: 'Welcome to the new <b>SNISNI</b>',
