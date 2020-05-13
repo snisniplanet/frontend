@@ -48,7 +48,7 @@ module.exports = {
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
     // Doc: https://github.com/nuxt-community/proxy-module
-    //'@nuxtjs/proxy'
+    '@nuxtjs/proxy'
   ],
   /**
    * Buefy module configuration
@@ -66,7 +66,8 @@ module.exports = {
   //},
   axios: {
     baseURL: 'http://backend/',
-    browserBaseURL: 'http://localhost:8080'
+    browserBaseURL: 'http://localhost:8080',
+    proxy: true,
   },
   /*
    ** Build configuration
