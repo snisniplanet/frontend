@@ -28,6 +28,10 @@ module.exports = {
    ** Plugins to load before mounting the App
    */
   plugins: [],
+  /**
+   ** Server middleware mapping
+   */
+  serverMiddleware: [],
   /*
    ** Nuxt.js dev-modules
    */
@@ -38,13 +42,13 @@ module.exports = {
   modules: [
     // Doc: https://buefy.github.io/#/documentation
     'nuxt-buefy',
-    // Doc: https://http.nuxtjs.org/guide/
-    '@nuxt/http',
+    // Doc: https://axios.nuxtjs.org/
+    '@nuxtjs/axios',
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
     // Doc: https://github.com/nuxt-community/proxy-module
-    '@nuxtjs/proxy'
+    //'@nuxtjs/proxy'
   ],
   /**
    * Buefy module configuration
@@ -57,8 +61,12 @@ module.exports = {
    ** Http module configuration
    ** See https://http.nuxtjs.org/api/#prefix
    */
-  http: {
-    proxy: true
+  //http: {
+  //  proxy: true
+  //},
+  axios: {
+    baseURL: 'http://backend/',
+    browserBaseURL: 'http://localhost:8080'
   },
   /*
    ** Build configuration
