@@ -38,11 +38,13 @@ module.exports = {
   modules: [
     // Doc: https://buefy.github.io/#/documentation
     'nuxt-buefy',
-    // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
+    // Doc: https://http.nuxtjs.org/guide/
+    '@nuxt/http',
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    // Doc: https://github.com/nuxt-community/proxy-module
+    '@nuxtjs/proxy'
   ],
   /**
    * Buefy module configuration
@@ -52,10 +54,12 @@ module.exports = {
     css: false
   },
   /*
-   ** Axios module configuration
-   ** See https://axios.nuxtjs.org/options
+   ** Http module configuration
+   ** See https://http.nuxtjs.org/api/#prefix
    */
-  axios: {},
+  http: {
+    proxy: true
+  },
   /*
    ** Build configuration
    */
