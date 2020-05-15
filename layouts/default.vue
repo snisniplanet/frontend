@@ -35,12 +35,12 @@
 
       <template #end>
         <b-navbar-item tag="div">
-          <nuxt-link to="#" class="button is-primary has-spacing"
-            >Login</nuxt-link
+          <nuxt-link
+            :to="{ path: '/enter' }"
+            class="button is-primary has-spacing"
           >
-          <nuxt-link to="#" class="button is-sencondary is-light has-spacing"
-            >Register</nuxt-link
-          >
+            Enter
+          </nuxt-link>
         </b-navbar-item>
       </template>
     </b-navbar>
