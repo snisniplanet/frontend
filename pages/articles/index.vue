@@ -30,7 +30,7 @@
                 /></span>
               </div>
               <hr />
-              <p>
+              <p class="is-content">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
                 nemo possimus ea nulla, perspiciatis qui natus incidunt beatae
                 similique odit totam. Nam optio beatae rem at aliquid a corrupti

@@ -65,7 +65,7 @@
         </editor-menu-bar>
 
         <div class="has-shadow">
-          <editor-content :editor="editor" class="editor" />
+          <editor-content :editor="editor" class="editor is-content" />
         </div>
       </no-ssr>
     </div>
