@@ -6,7 +6,7 @@
 
     <div class="hero-head container section">
       <p class="subtitle is-2">{{error.message}}</p>
-      <p class="subtitle is-4">
+      <p class="subtitle is-4" v-show="error.path">
         <span>Our awesome site</span>
         <span class="has-text-warning">{{error.path}}</span>
       </p>
