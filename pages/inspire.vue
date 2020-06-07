@@ -7,7 +7,7 @@
         </div>
 
         <div class="hero-foot container section">
-          <p class="subtitle">Letting you create a <strong>cool</strong>, <strong>clean</strong> and <strong>easy-to-manage</strong> blog.</p>
+          <p class="subtitle is-1">Letting you create a <strong>cool</strong>, <strong>clean</strong> and <strong>easy to manage</strong> blog.</p>
         </div>
       </div>
     </div>
