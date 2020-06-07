@@ -1,16 +1,16 @@
 <template>
   <div>
-    <section class="py-5 section-bubble1">
+    <div class="py-5 section-bubble1">
       <div class="hero is-large">
         <div class="hero-body container">
-          <h1 class="title is-1">Our mission</h1>
+          <h1 class="title is-0">Our final goal.</h1>
         </div>
 
         <div class="hero-foot container section">
           <p class="subtitle">Letting you create a <strong>cool</strong>, <strong>clean</strong> and <strong>easy-to-manage</strong> blog.</p>
         </div>
       </div>
-    </section>
+    </div>
     <section class="py-5 section-bubble2">
       <div class="container">
         <Card
@@ -99,6 +99,10 @@ $section5-bg-color: $light;
   @return '%23' + str-slice('#{$colour}', 2, -1);
 }
 
+section:nth-child(odd) .container > *{
+  margin-left: auto;
+}
+
 .section-bubble {
   margin-bottom: $spacer-height;
   position: relative;
@@ -110,7 +114,6 @@ $section5-bg-color: $light;
 
     width: 100%;
     height: $spacer-height;
-    //background: url('') green; // needs to be next sections background
     background-size: 100%;
 
     transform: translate(0, 100%);
