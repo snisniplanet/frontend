@@ -11,8 +11,8 @@
     </Banner>
     <section class="section container">
       <article
-        v-for="n in 5"
-        :key="n"
+        v-for="article in articles"
+        :key="article.id"
         class="box is-rounded has-shadow-centered"
       >
         <div class="columns is-vcentered">
@@ -24,25 +24,24 @@
           <div class="column">
             <div>
               <div>
-                <p class="title is-3 is-marginless">Title</p>
-                <span class="is-block"
-                  >by <strong>Author</strong> <b-icon icon="check"
-                /></span>
+                <p class="title is-3">{{article.title}}</p>
+                <p>{{article.snippet}}</p>
+                <div>
+                  <span>by</span>
+                  <span
+                    v-for="(author, i) in article.authors"
+                    :key="author.id"
+                  >
+                    <strong>{{author.username}}</strong>
+                    <span v-if="i < article.authors.length - 2">, </span>
+                    <span v-else-if="i == article.authors.length - 2"> and </span>
+                  </span>
+                </div>
               </div>
-              <hr />
-              <p class="is-content">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
-                nemo possimus ea nulla, perspiciatis qui natus incidunt beatae
-                similique odit totam. Nam optio beatae rem at aliquid a corrupti
-                fugit! Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Distinctio quasi nemo animi ipsam nobis expedita voluptatum
-                reiciendis, recusandae aspernatur tempora hic error porro nulla
-                vero in quibusdam assumenda explicabo non?
-              </p>
             </div>
             <br />
             <nuxt-link
-              to="this-is-an-article"
+              :to="'' + article.id"
               append
               class="button is-large is-fullwidth is-link is-outlined"
             >
@@ -64,12 +63,18 @@ export default {
   components: {
     Banner
   },
+
   mounted() {
     this.$buefy.toast.open({
       message: 'Welcome to the new <b>SNISNI</b>',
       type: 'is-dark',
       position: 'is-top'
     })
+  },
+
+  async asyncData({ $axios }) {
+    const articles = await $axios.$get('articles')
+    return { articles }
   }
 }
 </script>
