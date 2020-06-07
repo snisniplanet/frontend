@@ -48,7 +48,9 @@ module.exports = {
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
     // Doc: https://github.com/nuxt-community/proxy-module
-    '@nuxtjs/proxy'
+    '@nuxtjs/proxy',
+    // Doc: https://www.npmjs.com/package/@nuxtjs/style-resources
+    '@nuxtjs/style-resources'
   ],
   /**
    * Buefy module configuration
@@ -58,6 +60,11 @@ module.exports = {
     css: false,
     materialDesignIcons: true
   },
+
+  styleResources: {
+    scss: ['~assets/scss/app.scss']
+  },
+
   /*
    ** Http module configuration
    ** See https://http.nuxtjs.org/api/#prefix
