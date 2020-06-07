@@ -55,7 +55,8 @@ module.exports = {
    * See https://github.com/buefy/nuxt-buefy
    */
   buefy: {
-    css: false
+    css: false,
+    materialDesignIcons: true
   },
   /*
    ** Http module configuration
