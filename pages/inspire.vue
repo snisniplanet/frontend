@@ -1,38 +1,72 @@
 <template>
   <div>
     <section class="py-5 section-bubble1">
-      <div class="container">
-        <h1>Section1</h1>
-        <p>A test paragraph.</p>
+      <div class="hero is-large">
+        <div class="hero-body container">
+          <h1 class="title is-1">Our mission</h1>
+        </div>
+
+        <div class="hero-foot container section">
+          <p class="subtitle">Letting you create a <strong>cool</strong>, <strong>clean</strong> and <strong>easy-to-manage</strong> blog.</p>
+        </div>
       </div>
     </section>
     <section class="py-5 section-bubble2">
       <div class="container">
-        <h1>Section2</h1>
-        <p>A test paragraph.</p>
+        <Card
+          title="Mattia Sinisi"
+          authorPic="https://secure.gravatar.com/avatar/b53f8552447f5ef1deefe2d985a5e120"
+          username="sinisimattia"
+        >
+          Sta venendo abbastanza bene!
+        </Card>
       </div>
     </section>
     <section class="py-5 section-bubble3">
       <div class="container">
-        <h1>Section3</h1>
-        <p>A test paragraph.</p>
+        <Card
+          title="Mattia Sinisi"
+          authorPic="https://secure.gravatar.com/avatar/b53f8552447f5ef1deefe2d985a5e120"
+          username="sinisimattia"
+        >
+          Sta venendo abbastanza bene!
+        </Card>
       </div>
     </section>
     <section class="py-5 section-bubble4">
       <div class="container">
-        <h1>Section4</h1>
-        <p>A test paragraph.</p>
+        <Card
+          title="Mattia Sinisi"
+          authorPic="https://secure.gravatar.com/avatar/b53f8552447f5ef1deefe2d985a5e120"
+          username="sinisimattia"
+        >
+          Sta venendo abbastanza bene!
+        </Card>
       </div>
     </section>
     <section class="py-5 section-bubble5">
       <div class="container">
-        <h1>The footer</h1>
-        <p>A test paragraph.</p>
-        <br /><br /><br /><br />
+        <Card
+          title="Mattia Sinisi"
+          authorPic="https://secure.gravatar.com/avatar/b53f8552447f5ef1deefe2d985a5e120"
+          username="sinisimattia"
+        >
+          Sta venendo abbastanza bene!
+        </Card>
       </div>
     </section>
   </div>
 </template>
+
+<script>
+import Card from '~/components/Card'
+
+export default {
+  components: {
+    Card
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 $spacer-height: 20vw;
@@ -105,14 +139,6 @@ $section5-bg-color: $light;
     $section3-bg-color,
     $section4-bg-color
   );
-
-  h1 {
-    color: white;
-  }
-  p {
-    color: white;
-    opacity: 0.8;
-  }
 }
 
 .section-bubble4 {
@@ -125,7 +151,6 @@ $section5-bg-color: $light;
 
 .section-bubble5 {
   background: $section5-bg-color;
-  color: white;
 
   text-align: center;
 }
