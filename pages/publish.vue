@@ -67,6 +67,10 @@
         <div class="has-shadow">
           <editor-content :editor="editor" class="editor is-content" />
         </div>
+
+        <div>
+          <button @click="send">send</button>
+        </div>
       </no-ssr>
     </div>
   </div>
@@ -99,6 +103,12 @@ export default {
   },
   beforeDestroy() {
     this.editor.destroy()
+  },
+  methods: {
+    send(){
+      let doc = this.editor.getJSON()
+      console.log(doc.content)
+    }
   }
 }
 </script>
