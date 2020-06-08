@@ -1,9 +1,9 @@
 <template>
-  <div class="card is-rounded">
-    <div class="card-image" v-if="image">
-      <figure class="image is-4by3">
+  <div class="card is-rounded has-shadow-light">
+    <div class="card-image" v-if="thumbnail">
+      <figure class="image is-rounded is-4by3">
         <img
-          :src="image"
+          :src="thumbnail"
           alt
         />
       </figure>
@@ -11,7 +11,7 @@
     <div class="card-content">
       <div class="media">
         <div class="media-left" v-if="authorPic">
-          <figure class="image is-48x48">
+          <figure class="image is-rounded is-48x48">
             <img
               :src="authorPic"
               alt
@@ -38,7 +38,7 @@ export default {
       type: String,
       required: true
     },
-    image: String,
+    thumbnail: String,
     authorPic: String,
     username: String,
   }
@@ -48,5 +48,9 @@ export default {
 <style scoped>
 .card {
   max-width: 500px !important;
+}
+
+.image img {
+  object-fit: cover;
 }
 </style>
