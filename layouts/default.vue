@@ -37,7 +37,7 @@
         <b-navbar-item tag="div">
           <nuxt-link
             :to="{ path: '/enter' }"
-            class="button is-primary has-spacing"
+            class="button is-primary has-spacing is-rounded"
           >
             Enter
           </nuxt-link>
