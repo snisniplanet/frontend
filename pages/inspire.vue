@@ -14,6 +14,7 @@
     <section class="py-5 section-bubble2">
       <div class="container">
         <Card
+          thumbnail="https://picsum.photos/500"
           title="Mattia Sinisi"
           authorPic="https://secure.gravatar.com/avatar/b53f8552447f5ef1deefe2d985a5e120"
           username="sinisimattia"
@@ -25,36 +26,28 @@
     <section class="py-5 section-bubble3">
       <div class="container">
         <Card
-          title="Mattia Sinisi"
-          authorPic="https://secure.gravatar.com/avatar/b53f8552447f5ef1deefe2d985a5e120"
-          username="sinisimattia"
-        >
-          Sta venendo abbastanza bene!
-        </Card>
+          thumbnail="https://picsum.photos/500"
+          title="Un team dedicato"
+        />
       </div>
     </section>
     <section class="py-5 section-bubble4">
       <div class="container">
         <Card
-          title="Mattia Sinisi"
-          authorPic="https://secure.gravatar.com/avatar/b53f8552447f5ef1deefe2d985a5e120"
-          username="sinisimattia"
+          title="Loved by bloggers"
+          username="everyone"
         >
-          Sta venendo abbastanza bene!
+          Over 10.000 articles posted <u>every day</u>!
         </Card>
       </div>
     </section>
-    <section class="py-5 section-bubble5">
-      <div class="container">
-        <Card
-          title="Mattia Sinisi"
-          authorPic="https://secure.gravatar.com/avatar/b53f8552447f5ef1deefe2d985a5e120"
-          username="sinisimattia"
-        >
-          Sta venendo abbastanza bene!
-        </Card>
+    <div class="py-5 section-bubble5">
+      <div class="hero is-large">
+        <div class="hero-body container">
+          <h2 class="title is-1">Let's make it together.</h2>
+        </div>
       </div>
-    </section>
+    </div>
   </div>
 </template>
 
@@ -101,6 +94,10 @@ $section5-bg-color: $light;
 
 section:nth-child(odd) .container > *{
   margin-left: auto;
+}
+
+section .container {
+  padding: 20px 0;
 }
 
 .section-bubble {
