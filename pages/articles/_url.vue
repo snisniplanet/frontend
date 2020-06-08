@@ -20,7 +20,7 @@
     <div class="intersection-bottom">
       <div class="container"></div>
 
-      <div class="box container is-paddingless">
+      <div class="container is-paddingless">
         <div class="image has-shadow is-rounded">
           <img src="https://picsum.photos/1000/400?grayscale" />
         </div>
