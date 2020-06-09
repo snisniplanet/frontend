@@ -64,12 +64,19 @@
           </div>
         </editor-menu-bar>
 
-        <div class="has-shadow">
+        <div>
           <editor-content :editor="editor" class="editor is-content" />
         </div>
 
         <div>
-          <button @click="send">send</button>
+          <button class="button is-info is-large" @click="send">send</button>
+        </div>
+
+        <hr>
+
+        <div>
+          <p class="title is-2">Test output</p>
+          <div ref="result"></div>
         </div>
       </no-ssr>
     </div>
@@ -79,6 +86,10 @@
 <script>
 import { EditorContent, EditorMenuBar, Editor } from 'tiptap'
 import { Bold, Blockquote, Code, CodeBlock, Italic } from 'tiptap-extensions'
+
+import schema from '~/assets/schemas/prosemirror-schema-rich'
+import { addListNodes } from 'prosemirror-schema-list'
+import { Node, DOMSerializer, Schema } from 'prosemirror-model'
 
 export default {
   components: {
@@ -105,9 +116,20 @@ export default {
     this.editor.destroy()
   },
   methods: {
-    send(){
+    send() {
       let doc = this.editor.getJSON()
-      console.log(doc.content)
+      console.log(doc)
+
+      // converting to html
+      let customSchema = new Schema(schema)
+      let target = this.$refs.result
+      let contentNode = Node.fromJSON(customSchema, doc)
+
+      DOMSerializer.fromSchema(customSchema).serializeFragment(
+        contentNode.content,
+        { document: window.document },
+        target
+      )
     }
   }
 }
