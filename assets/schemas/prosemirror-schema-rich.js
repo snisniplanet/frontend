@@ -2,7 +2,7 @@ import { schema } from 'prosemirror-schema-basic'
 
 let custom = {
   nodes: {
-    doc: { content: 'block+' }, // block+ means optionally group block nodes
+    doc: { content: 'block+' },
     paragraph: {
       group: 'block',
       content: 'inline*',
