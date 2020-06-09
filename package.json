@@ -27,6 +27,9 @@
     "express": "^4.16.4",
     "nuxt": "^2.0.0",
     "nuxt-buefy": "^0.3.2",
+    "prosemirror-model": "^1.10.0",
+    "prosemirror-schema-basic": "^1.1.2",
+    "prosemirror-schema-list": "^1.1.2",
     "tiptap": "^1.27.1",
     "tiptap-extensions": "^1.29.1"
   },
@@ -38,6 +41,7 @@
     "@vue/test-utils": "^1.0.0-beta.27",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^24.1.0",
+    "credits-cli": "^3.1.0",
     "eslint": "^6.1.0",
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-nuxt": ">=0.4.2",
