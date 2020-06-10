@@ -44,7 +44,6 @@ module.exports = {
     'nuxt-buefy',
     // Doc: https://axios.nuxtjs.org/
     '@nuxtjs/axios',
-    '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
     // Doc: https://github.com/nuxt-community/proxy-module
