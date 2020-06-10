@@ -2,7 +2,7 @@
   <div>
     <div>
       <div
-        class="hero is-medium is-primary intersection-top has-tornado-background"
+        class="hero is-large is-primary intersection-top has-tornado-background"
       >
         <div class="hero-body container has-text-centered">
           <h1 class="title is-0 glow is-light is-still">
