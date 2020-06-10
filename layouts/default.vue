@@ -13,7 +13,7 @@
           exact-active-class="has-text-primary"
           :to="{ name: 'articles' }"
         >
-          Articles
+          <IconLabel icon="newspaper">Articles</IconLabel>
         </b-navbar-item>
 
         <b-navbar-item
@@ -21,7 +21,7 @@
           exact-active-class="has-text-primary"
           :to="{ name: 'blogs' }"
         >
-          Blogs
+          <IconLabel icon="th">Blogs</IconLabel>
         </b-navbar-item>
 
         <b-navbar-item
@@ -29,7 +29,7 @@
           exact-active-class="has-text-primary"
           to="#"
         >
-          API
+          <IconLabel icon="cubes">APIs</IconLabel>
         </b-navbar-item>
       </template>
 
@@ -60,14 +60,17 @@
               :key="link.href"
               :to="link.href"
               :icon="link.icon"
+              pack="fab"
               >{{ link.name }}</CoolLink
             >
           </aside>
 
           <aside class="column">
+            <CoolLink to="/inspire" icon="book">About</CoolLink>
+
             <CoolLink to="#" icon="lock">Privacy Policy</CoolLink>
 
-            <CoolLink to="#" icon="bug_report">Spotted a bug?</CoolLink>
+            <CoolLink to="#" icon="bug">Spotted a bug?</CoolLink>
           </aside>
 
           <aside class="column">
@@ -96,11 +99,13 @@
 import { links } from '~/snisni.config.json'
 
 import CoolLink from '~/components/CoolLink'
+import IconLabel from '~/components/IconLabel'
 import BuyMeACoffee from '~/components/BuyMeACoffee'
 
 export default {
   components: {
     CoolLink,
+    IconLabel,
     BuyMeACoffee
   },
 

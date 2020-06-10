@@ -10,10 +10,9 @@
           noopener
         >
           <span class="has-text-centered">
-            <b-icon v-if="icon" :icon="icon"></b-icon>
-            <span>
+            <IconLabel :pack="pack" :icon="icon">
               <slot></slot>
-            </span>
+            </IconLabel>
           </span>
         </component>
       </div>
@@ -22,9 +21,14 @@
 </template>
 
 <script>
+import IconLabel from '~/components/IconLabel'
+
 export default {
+  extends: IconLabel,
+  components: {
+    IconLabel,
+  },
   props: {
-    icon: String,
     to: String,
     internal: {
       type: Boolean,
