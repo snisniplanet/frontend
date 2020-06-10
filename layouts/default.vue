@@ -56,7 +56,7 @@
         <section class="columns">
           <aside class="column">
             <CoolLink
-              v-for="link in links"
+              v-for="link in contacts"
               :key="link.href"
               :to="link.href"
               :icon="link.icon.name"
@@ -96,7 +96,7 @@
 </template>
 
 <script>
-import { links } from '~/snisni.config.json'
+import { contacts } from '~/snisni.config.json'
 
 import CoolLink from '~/components/molecoles/CoolLink'
 import IconLabel from '~/components/atoms/IconLabel'
@@ -124,7 +124,7 @@ export default {
         }
       ],
 
-      links
+      contacts
     }
   }
 }
