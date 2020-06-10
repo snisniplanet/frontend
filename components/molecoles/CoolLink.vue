@@ -24,10 +24,10 @@
 import IconLabel from '~/components/atoms/IconLabel'
 
 export default {
-  extends: IconLabel,
   components: {
-    IconLabel,
+    IconLabel
   },
+  extends: IconLabel,
   props: {
     to: String,
     internal: {

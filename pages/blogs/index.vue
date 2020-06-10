@@ -11,7 +11,7 @@
     </Banner>
 
     <div>
-      <div class="hero is-dark" v-for="blog in blogs" :key="blog.code">
+      <div v-for="blog in blogs" :key="blog.code" class="hero is-dark">
         <div class="hero-body">
           <div class="container">
             <p class="title is-3">{{ blog.name }}</p>

@@ -5,7 +5,8 @@ module.exports = {
    */
   head: {
     title: 'SNISNI',
-    meta: [{
+    meta: [
+      {
         charset: 'utf-8'
       },
       {
@@ -18,11 +19,13 @@ module.exports = {
         content: process.env.npm_package_description || ''
       }
     ],
-    link: [{
-      rel: 'icon',
-      type: 'image/x-icon',
-      href: '/favicon.ico'
-    }]
+    link: [
+      {
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: '/favicon.ico'
+      }
+    ]
   },
   /*
    ** Customize the progress-bar color
@@ -61,7 +64,7 @@ module.exports = {
     // Doc: https://www.npmjs.com/package/@nuxtjs/style-resources
     '@nuxtjs/style-resources',
     // Doc: https://www.npmjs.com/package/nuxt-fontawesome
-    'nuxt-fontawesome',
+    'nuxt-fontawesome'
   ],
   /**
    * Buefy module configuration
@@ -89,7 +92,7 @@ module.exports = {
       {
         set: '@fortawesome/free-brands-svg-icons',
         icons: ['fab']
-      },
+      }
     ]
   },
 
@@ -101,13 +104,13 @@ module.exports = {
    ** Http module configuration
    ** See https://http.nuxtjs.org/api/#prefix
    */
-  //http: {
+  // http: {
   //  proxy: true
-  //},
+  // },
   axios: {
     baseURL: 'http://backend/',
     browserBaseURL: 'http://localhost:8080',
-    proxy: true,
+    proxy: true
   },
   /*
    ** Build configuration

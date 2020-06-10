@@ -1,26 +1,20 @@
 <template>
   <div class="card is-rounded has-shadow-light">
-    <div class="card-image" v-if="thumbnail">
+    <div v-if="thumbnail" class="card-image">
       <figure class="image is-rounded is-4by3">
-        <img
-          :src="thumbnail"
-          alt
-        />
+        <img :src="thumbnail" alt />
       </figure>
     </div>
     <div class="card-content">
       <div class="media">
-        <div class="media-left" v-if="authorPic">
+        <div v-if="authorPic" class="media-left">
           <figure class="image is-rounded is-48x48">
-            <img
-              :src="authorPic"
-              alt
-            />
+            <img :src="authorPic" alt />
           </figure>
         </div>
         <div class="media-content">
-          <p class="title is-4">{{title}}</p>
-          <p class="subtitle is-6" v-if="username">@{{username}}</p>
+          <p class="title is-4">{{ title }}</p>
+          <p v-if="username" class="subtitle is-6">@{{ username }}</p>
         </div>
       </div>
 
@@ -40,7 +34,7 @@ export default {
     },
     thumbnail: String,
     authorPic: String,
-    username: String,
+    username: String
   }
 }
 </script>

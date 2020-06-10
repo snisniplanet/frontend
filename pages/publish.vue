@@ -10,9 +10,10 @@
 
           <h3 class="subtitle is-5">
             Built with
-            <a href="https://tiptap.scrumpy.io/" target="_blank" rel="noopener"
-              >tiptap</a
-            >.
+            <a href="https://tiptap.scrumpy.io/" target="_blank" rel="noopener">
+              tiptap
+            </a>
+            .
           </h3>
         </div>
       </div>
@@ -72,7 +73,7 @@
           <button class="button is-info is-large" @click="send">send</button>
         </div>
 
-        <hr>
+        <hr />
 
         <div>
           <p class="title is-2">Test output</p>
@@ -117,9 +118,9 @@ export default {
   },
   methods: {
     send() {
-      let doc = this.editor.getJSON()
-      let schema = this.editor.schema
-      let target = this.$refs.result
+      const doc = this.editor.getJSON()
+      const schema = this.editor.schema
+      const target = this.$refs.result
 
       new Article(doc, schema).view(target)
     }

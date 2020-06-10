@@ -7,7 +7,10 @@
         </div>
 
         <div class="hero-foot container section">
-          <p class="subtitle is-1">Letting you create a <strong>cool</strong>, <strong>clean</strong> and <strong>easy to manage</strong> blog.</p>
+          <p class="subtitle is-1">
+            Letting you create a <strong>cool</strong>,
+            <strong>clean</strong> and <strong>easy to manage</strong> blog.
+          </p>
         </div>
       </div>
     </div>
@@ -16,7 +19,7 @@
         <Card
           thumbnail="https://picsum.photos/500?grayscale"
           title="Mattia Sinisi"
-          authorPic="https://secure.gravatar.com/avatar/b53f8552447f5ef1deefe2d985a5e120"
+          author-pic="https://secure.gravatar.com/avatar/b53f8552447f5ef1deefe2d985a5e120"
           username="sinisimattia"
         >
           Sta venendo abbastanza bene!
@@ -33,10 +36,7 @@
     </section>
     <section class="py-5 section-bubble4">
       <div class="container">
-        <Card
-          title="Loved by bloggers"
-          username="everyone"
-        >
+        <Card title="Loved by bloggers" username="everyone">
           Over 10.000 articles posted <u>every day</u>!
         </Card>
       </div>
@@ -92,7 +92,7 @@ $section5-bg-color: $light;
   @return '%23' + str-slice('#{$colour}', 2, -1);
 }
 
-section:nth-child(odd) .container > *{
+section:nth-child(odd) .container > * {
   margin-left: auto;
 }
 

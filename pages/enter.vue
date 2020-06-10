@@ -7,21 +7,14 @@
           <div class="field">
             <label class="label">Your email / Username</label>
             <div class="control">
-              <input
-                class="input"
-                type="text"
-              />
+              <input class="input" type="text" />
             </div>
           </div>
 
           <div class="field">
             <label class="label">Your password</label>
             <div class="control">
-              <input
-                class="input"
-                type="password"
-                placeholder="********"
-              />
+              <input class="input" type="password" placeholder="********" />
             </div>
           </div>
 
@@ -42,13 +35,11 @@
       <b-tab-item label="Register">
         <form class="form" @submit.prevent="">
           <div class="field">
-            <label class="label">Your <span class="has-text-success">new</span> username</label>
+            <label class="label"
+              >Your <span class="has-text-success">new</span> username</label
+            >
             <div class="control">
-              <b-input
-                icon-pack="fas"
-                icon="at"
-                type="text"
-              />
+              <b-input icon-pack="fas" icon="at" type="text" />
             </div>
           </div>
 
@@ -64,13 +55,11 @@
           </div>
 
           <div class="field">
-            <label class="label">Your <span class="has-text-success">new</span> password</label>
+            <label class="label"
+              >Your <span class="has-text-success">new</span> password</label
+            >
             <div class="control">
-              <input
-                class="input"
-                type="password"
-                placeholder="********"
-              />
+              <input class="input" type="password" placeholder="********" />
             </div>
           </div>
 
@@ -80,7 +69,7 @@
                 class="button is-large"
                 native-type="submit"
                 icon-pack="fas"
-                icon-right ="arrow-circle-right"
+                icon-right="arrow-circle-right"
               >
                 Welcome!
               </b-button>

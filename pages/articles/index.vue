@@ -24,17 +24,16 @@
           <div class="column">
             <div>
               <div>
-                <p class="title is-3">{{article.title}}</p>
-                <p>{{article.snippet}}</p>
+                <p class="title is-3">{{ article.title }}</p>
+                <p>{{ article.snippet }}</p>
                 <div>
                   <span>by</span>
-                  <span
-                    v-for="(author, i) in article.authors"
-                    :key="author.id"
-                  >
-                    <strong>{{author.username}}</strong>
+                  <span v-for="(author, i) in article.authors" :key="author.id">
+                    <strong>{{ author.username }}</strong>
                     <span v-if="i < article.authors.length - 2">, </span>
-                    <span v-else-if="i == article.authors.length - 2"> and </span>
+                    <span v-else-if="i == article.authors.length - 2">
+                      and
+                    </span>
                   </span>
                 </div>
               </div>
@@ -64,17 +63,17 @@ export default {
     Banner
   },
 
+  async asyncData({ $axios }) {
+    const articles = await $axios.$get('articles')
+    return { articles }
+  },
+
   mounted() {
     this.$buefy.toast.open({
       message: 'Welcome to the new <b>SNISNI</b>',
       type: 'is-dark',
       position: 'is-top'
     })
-  },
-
-  async asyncData({ $axios }) {
-    const articles = await $axios.$get('articles')
-    return { articles }
   }
 }
 </script>

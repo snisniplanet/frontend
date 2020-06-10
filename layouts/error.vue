@@ -1,14 +1,14 @@
 <template>
   <div class="hero is-large is-info">
     <div class="hero-head container">
-      <p class="title is-0">{{error.statusCode}}</p>
+      <p class="title is-0">{{ error.statusCode }}</p>
     </div>
 
     <div class="hero-head container section">
-      <p class="subtitle is-2">{{error.message}}</p>
-      <p class="subtitle is-4" v-show="error.path">
+      <p class="subtitle is-2">{{ error.message }}</p>
+      <p v-show="error.path" class="subtitle is-4">
         <span>Our awesome site</span>
-        <span class="has-text-warning">{{error.path}}</span>
+        <span class="has-text-warning">{{ error.path }}</span>
       </p>
     </div>
 
@@ -22,6 +22,8 @@
 
 <script>
 export default {
-  props: ['error']
+  props: {
+    error: Object
+  }
 }
 </script>
