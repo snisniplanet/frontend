@@ -5,21 +5,31 @@ module.exports = {
    */
   head: {
     title: 'SNISNI',
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+    meta: [{
+        charset: 'utf-8'
+      },
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1'
+      },
       {
         hid: 'description',
         name: 'description',
         content: process.env.npm_package_description || ''
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{
+      rel: 'icon',
+      type: 'image/x-icon',
+      href: '/favicon.ico'
+    }]
   },
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: '#000' },
+  loading: {
+    color: '#000'
+  },
   /*
    ** Global CSS
    */
@@ -49,7 +59,9 @@ module.exports = {
     // Doc: https://github.com/nuxt-community/proxy-module
     '@nuxtjs/proxy',
     // Doc: https://www.npmjs.com/package/@nuxtjs/style-resources
-    '@nuxtjs/style-resources'
+    '@nuxtjs/style-resources',
+    // Doc: https://www.npmjs.com/package/nuxt-fontawesome
+    'nuxt-fontawesome',
   ],
   /**
    * Buefy module configuration
@@ -57,7 +69,24 @@ module.exports = {
    */
   buefy: {
     css: false,
-    materialDesignIcons: true
+    materialDesignIcons: false,
+    defaultIconPack: 'fas'
+  },
+
+  /**
+   * Use FontAwesome icons with a wrapper
+   * based on the official 'vue-fontawesome'
+   * component
+   * See: https://www.npmjs.com/package/nuxt-fontawesome
+   */
+  fontawesome: {
+    component: 'fa',
+    imports: [
+      {
+        set: '@fortawesome/free-solid-svg-icons',
+        icons: ['fas']
+      },
+    ]
   },
 
   styleResources: {
