@@ -52,7 +52,7 @@
 </template>
 
 <script>
-import Card from '~/components/Card'
+import Card from '~/components/atoms/Card'
 
 export default {
   components: {

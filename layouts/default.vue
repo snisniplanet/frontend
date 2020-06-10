@@ -98,9 +98,9 @@
 <script>
 import { links } from '~/snisni.config.json'
 
-import CoolLink from '~/components/CoolLink'
-import IconLabel from '~/components/IconLabel'
-import BuyMeACoffee from '~/components/BuyMeACoffee'
+import CoolLink from '~/components/molecoles/CoolLink'
+import IconLabel from '~/components/atoms/IconLabel'
+import BuyMeACoffee from '~/components/prefabs/BuyMeACoffee'
 
 export default {
   components: {

@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import IconLabel from '~/components/IconLabel'
+import IconLabel from '~/components/atoms/IconLabel'
 
 export default {
   extends: IconLabel,

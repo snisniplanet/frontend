@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import Banner from '~/components/Banner'
+import Banner from '~/components/atoms/Banner'
 export default {
   components: {
     Banner
