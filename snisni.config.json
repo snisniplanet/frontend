@@ -2,8 +2,19 @@
   "links": [
     {
       "name": "GitHub",
-      "icon": "github",
+      "icon": {
+        "pack": "fab",
+        "name": "github"
+      },
       "href": "https://github.com/snisniplanet"
+    },
+    {
+      "name": "Contact Us",
+      "icon": {
+        "pack": "fas",
+        "name": "envelope"
+      },
+      "href": "mailto:team@snisni.it"
     }
   ]
 }
