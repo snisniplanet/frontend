@@ -5,11 +5,13 @@
         class="hero is-large is-primary intersection-top has-tornado-background"
       >
         <div class="hero-body container has-text-centered">
-          <h1 class="title is-0 glow is-light is-still">
-            <span>SNI</span>
-            <span>SNI</span>
-          </h1>
-          <h2 class="subtitle is-4">The <u>orange</u> release.</h2>
+          <div>
+            <h1 class="title is-0 glow is-light is-still">
+              <span>SNI</span>
+              <span>SNI</span>
+            </h1>
+            <h2 class="subtitle is-4">The <u>orange</u> release.</h2>
+          </div>
         </div>
       </div>
 
