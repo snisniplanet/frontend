@@ -59,8 +59,8 @@
               v-for="link in links"
               :key="link.href"
               :to="link.href"
-              :icon="link.icon"
-              pack="fab"
+              :icon="link.icon.name"
+              :pack="link.icon.pack"
               >{{ link.name }}</CoolLink
             >
           </aside>
