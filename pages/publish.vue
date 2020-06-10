@@ -87,9 +87,7 @@
 import { EditorContent, EditorMenuBar, Editor } from 'tiptap'
 import { Bold, Blockquote, Code, CodeBlock, Italic } from 'tiptap-extensions'
 
-import schema from '~/assets/schemas/prosemirror-schema-rich'
-import { addListNodes } from 'prosemirror-schema-list'
-import { Node, DOMSerializer, Schema } from 'prosemirror-model'
+import { Article } from '~/classes/Article'
 
 export default {
   components: {
@@ -111,6 +109,8 @@ export default {
         new Italic()
       ]
     })
+
+    this.editor.focus()
   },
   beforeDestroy() {
     this.editor.destroy()
@@ -118,18 +118,10 @@ export default {
   methods: {
     send() {
       let doc = this.editor.getJSON()
-      console.log(doc)
-
-      // converting to html
-      let customSchema = new Schema(schema)
+      let schema = this.editor.schema
       let target = this.$refs.result
-      let contentNode = Node.fromJSON(customSchema, doc)
 
-      DOMSerializer.fromSchema(customSchema).serializeFragment(
-        contentNode.content,
-        { document: window.document },
-        target
-      )
+      new Article(doc, schema).view(target)
     }
   }
 }
