@@ -20,7 +20,7 @@ body {
 .footer {
   background: linear-gradient($footer-background-color, $white);
 
-  &.is-dark{
+  &.is-dark {
     background: $dark;
     color: $white-ter !important;
   }
@@ -41,7 +41,8 @@ body {
 .is-rounded {
   border-radius: $radius-large !important;
 
-  &.has-children > *, &.image > img {
+  &.has-children > *,
+  &.image > img {
     border-radius: $radius-large;
   }
 }
@@ -56,13 +57,12 @@ body {
   }
 }
 
-.intersection{
-  .intersection-top{
+.intersection {
+  .intersection-top {
     padding-bottom: +$intersection;
   }
 
-
-  .intersection-bottom{
+  .intersection-bottom {
     margin-top: -$intersection;
   }
 }
@@ -89,6 +89,12 @@ body {
   margin: $spacing;
 }
 
-[contenteditable="true"]:focus {
+[contenteditable='true']:focus {
   outline: none;
+}
+
+.is-vcentered {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
