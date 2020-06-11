@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div>
+    <div class="intersection">
       <div
         class="hero is-large is-primary intersection-top has-tornado-background"
       >
@@ -18,7 +18,7 @@
       <div class="container intersection-bottom section">
         <div class="tile is-ancestor">
           <div class="tile is-parent is-vertical">
-            <div class="tile is-child notification is-primary has-shadow">
+            <div class="tile is-child notification is-info has-shadow">
               <p class="title is-1">Coming soon</p>
             </div>
 
