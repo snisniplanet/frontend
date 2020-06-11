@@ -9,7 +9,10 @@
         See what has made the list today
       </template>
     </Banner>
-    <section class="section container" v-if="Array.isArray(articles) && articles.length > 0">
+    <section
+      v-if="Array.isArray(articles) && articles.length > 0"
+      class="section container"
+    >
       <article
         v-for="article in articles"
         :key="article.id"
@@ -57,7 +60,6 @@
 
 <script>
 import Banner from '~/components/atoms/Banner'
-import IconLabel from '~/components/atoms/IconLabel'
 import Empty from '~/components/prefabs/Empty'
 
 export default {
@@ -65,7 +67,6 @@ export default {
 
   components: {
     Banner,
-    IconLabel,
     Empty
   },
 
