@@ -9,7 +9,7 @@
         See what has made the list today
       </template>
     </Banner>
-    <section class="section container">
+    <section class="section container" v-if="Array.isArray(articles) && articles.length > 0">
       <article
         v-for="article in articles"
         :key="article.id"
@@ -50,17 +50,23 @@
         </div>
       </article>
     </section>
+
+    <Empty v-else />
   </div>
 </template>
 
 <script>
 import Banner from '~/components/atoms/Banner'
+import IconLabel from '~/components/atoms/IconLabel'
+import Empty from '~/components/prefabs/Empty'
 
 export default {
   name: 'HomePage',
 
   components: {
-    Banner
+    Banner,
+    IconLabel,
+    Empty
   },
 
   async asyncData({ $axios }) {

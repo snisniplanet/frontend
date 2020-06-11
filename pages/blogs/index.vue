@@ -10,7 +10,7 @@
       </template>
     </Banner>
 
-    <div>
+    <div v-if="Array.isArray(blogs) && blogs.length > 0">
       <div v-for="blog in blogs" :key="blog.code" class="hero is-dark">
         <div class="hero-body">
           <div class="container">
@@ -19,14 +19,19 @@
         </div>
       </div>
     </div>
+
+    <Empty v-else />
   </div>
 </template>
 
 <script>
 import Banner from '~/components/atoms/Banner'
+import Empty from '~/components/prefabs/Empty'
+
 export default {
   components: {
-    Banner
+    Banner,
+    Empty
   },
 
   async asyncData({ $axios }) {
