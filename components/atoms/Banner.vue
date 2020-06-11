@@ -9,6 +9,8 @@
         <h3>
           <slot name="subtitle"></slot>
         </h3>
+
+        <slot></slot>
       </div>
     </div>
   </div>
