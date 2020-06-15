@@ -9,7 +9,7 @@ export const state = () => ({
 
 export const mutations = {
   assign(user, data) {
-    let newUser = new User(data.username, data.email, data.id)
+    const newUser = new User(data.username, data.email, data.id)
 
     user.id = newUser.id
     user.username = newUser.username
