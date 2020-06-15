@@ -1,7 +1,7 @@
-import { validate } from 'class-validator'
+import { validate, ValidationError } from 'class-validator'
 
 export default abstract class {
-  public validate(){
-    return validate(this);
+  public async validate(): Promise<ValidationError[]>{
+    return await validate(this);
   }
 }
