@@ -1,11 +1,7 @@
 import User from '@/classes/User'
 import endpoints from '@/config/endpoints.json'
 
-export const state = () => ({
-  username: null,
-  email: null,
-  id: null
-})
+export const state = () => new User()
 
 export const mutations = {
   assign(user, data) {
