@@ -28,7 +28,7 @@
           </div>
 
           <div class="tile is-parent">
-            <div class="tile is-child box is-content">
+            <div class="tile is-child notification is-content">
               <p>But, for now. It remains empty</p>
 
               <p>
@@ -44,3 +44,15 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  mounted() {
+    this.$buefy.toast.open({
+      message: 'Welcome to the new <b>SNISNI</b>',
+      type: 'is-dark',
+      position: 'is-top'
+    })
+  }
+}
+</script>

@@ -74,13 +74,5 @@ export default {
     const articles = await $axios.$get('articles')
     return { articles }
   },
-
-  mounted() {
-    this.$buefy.toast.open({
-      message: 'Welcome to the new <b>SNISNI</b>',
-      type: 'is-dark',
-      position: 'is-top'
-    })
-  }
 }
 </script>

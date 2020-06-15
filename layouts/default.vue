@@ -37,7 +37,7 @@
         <b-navbar-item tag="div">
           <span v-if="username" class="button is-secondary has-spacing is-rounded">
             <span class="has-text-link">@</span>
-            {{username}}
+            <span>{{username}}</span>
           </span>
 
           <nuxt-link
