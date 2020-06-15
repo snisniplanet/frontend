@@ -9,7 +9,11 @@ export const state = () => ({
 
 export const mutations = {
   assign(user, data) {
-    user = new User(data.username, data.email, data.id)
+    let newUser = new User(data.username, data.email, data.id)
+
+    user.id = newUser.id
+    user.username = newUser.username
+    user.email = newUser.email
   }
 }
 
@@ -39,5 +43,8 @@ export const actions = {
 }
 
 export const getters = {
+  all: (user) => user,
+  id: (user) => user.id,
+  username: (user) => user.username,
   email: (user) => user.email
 }
