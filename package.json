@@ -25,8 +25,10 @@
     "@nuxtjs/dotenv": "^1.4.0",
     "@nuxtjs/proxy": "^1.3.3",
     "@types/prosemirror-model": "^1.7.2",
+    "class-validator": "^0.12.2",
     "cross-env": "^5.2.0",
     "express": "^4.16.4",
+    "lodash-es": "^4.17.15",
     "nuxt": "^2.0.0",
     "nuxt-buefy": "^0.3.2",
     "nuxt-fontawesome": "^0.4.0",
@@ -54,7 +56,7 @@
     "nodemon": "^1.18.9",
     "prettier": "^1.19.1",
     "sass-loader": "^8.0.2",
-    "ts-jest": "^25.0.0",
+    "ts-jest": "^25.5.1",
     "vue-jest": "^4.0.0-0",
     "vue-ts-plugin": "^0.1.0"
   }
