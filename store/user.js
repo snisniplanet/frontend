@@ -8,21 +8,22 @@ export const state = () => ({
 })
 
 export const mutations = {
-  assign (user, data){
+  assign(user, data) {
     user = new User(data.username, data.email, data.id)
   }
 }
 
 export const actions = {
-  login (user, data){
-    this.$axios.$post(endpoints.user.login, data)
-    .then(res => {
-      user.commit('assign', res.data.user)
-      this.$axios.setToken(res.data.token, 'Bearer')
-    })
-    .catch(err => {
-      console.error(err)
-    })
+  login(user, data) {
+    this.$axios
+      .$post(endpoints.user.login, data)
+      .then((res) => {
+        user.commit('assign', res.data.user)
+        this.$axios.setToken(res.data.token, 'Bearer')
+      })
+      .catch((err) => {
+        console.error(err)
+      })
   }
 }
 

@@ -7,7 +7,7 @@
           <div class="field">
             <label class="label">Your email</label>
             <div class="control">
-              <input class="input" type="text" v-model="email" />
+              <input v-model="email" class="input" type="text" />
             </div>
           </div>
 
@@ -15,10 +15,10 @@
             <label class="label">Your password</label>
             <div class="control">
               <input
+                v-model="password"
                 class="input"
                 type="password"
                 placeholder="Current Password"
-                v-model="password"
               />
             </div>
           </div>
@@ -40,15 +40,13 @@
       <b-tab-item label="Register">
         <form class="form" @submit.prevent="register">
           <div class="field">
-            <label class="label"
-              >Your <span class="has-text-success">new</span> username</label
-            >
+            <label class="label">Your <span class="has-text-success">new</span> username</label>
             <div class="control">
               <b-input
+                v-model="username"
                 icon-pack="fas"
                 icon="at"
                 type="text"
-                v-model="username"
               />
             </div>
           </div>
@@ -57,24 +55,22 @@
             <label class="label">Your email</label>
             <div class="control">
               <b-input
+                v-model="email"
                 icon="email"
                 type="email"
                 placeholder="your@awesome.email"
-                v-model="email"
               />
             </div>
           </div>
 
           <div class="field">
-            <label class="label"
-              >Your <span class="has-text-success">new</span> password</label
-            >
+            <label class="label">Your <span class="has-text-success">new</span> password</label>
             <div class="control">
               <input
+                v-model="password"
                 class="input"
                 type="password"
                 placeholder="A strong password"
-                v-model="password"
               />
             </div>
           </div>
@@ -102,9 +98,9 @@ import { mapActions } from 'vuex'
 export default {
   methods: {
     ...mapActions({
-      login: "user/login"
+      login: 'user/login'
     }),
-    sendLogin($event){
+    sendLogin($event) {
       this.login({
         username: this.username,
         email: this.email,
@@ -112,7 +108,7 @@ export default {
       })
     }
   },
-  data(){
+  data() {
     return {
       username: '',
       email: '',
