@@ -1,1 +1,1 @@
-This directory is dedicated to ***TypeScript*** classes
+This directory is dedicated to ***TypeScript*** elements
