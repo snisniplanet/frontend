@@ -11,7 +11,7 @@
     </Banner>
     <section
       v-if="Array.isArray(articles) && articles.length > 0"
-      class="section container"
+      class="container"
     >
       <article
         v-for="article in articles"
