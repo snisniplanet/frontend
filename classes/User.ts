@@ -1,6 +1,7 @@
 import { IsNotEmpty, IsEmail } from 'class-validator'
+import Valid from '@/classes/abstract/Valid';
 
-export default class {
+export default class extends Valid{
   @IsNotEmpty({
     message: "No ID given"
   })
@@ -18,6 +19,8 @@ export default class {
   private email: String;
 
   constructor(username: String, email: String, id: String){
+    super();
+
     this.id = id;
     this.username = username;
     this.email = email;
