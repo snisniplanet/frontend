@@ -28,7 +28,6 @@
               <b-button
                 class="button is-large"
                 native-type="submit"
-                icon-left="github"
               >
                 Enter
               </b-button>
@@ -44,8 +43,6 @@
             <div class="control">
               <b-input
                 v-model="username"
-                icon-pack="fas"
-                icon="at"
                 type="text"
               />
             </div>
@@ -56,7 +53,6 @@
             <div class="control">
               <b-input
                 v-model="email"
-                icon="email"
                 type="email"
                 placeholder="your@awesome.email"
               />
@@ -80,8 +76,6 @@
               <b-button
                 class="button is-large"
                 native-type="submit"
-                icon-pack="fas"
-                icon-right="arrow-circle-right"
               >
                 Welcome!
               </b-button>

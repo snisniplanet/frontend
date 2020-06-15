@@ -79,7 +79,6 @@
                 size="is-medium"
                 type="email"
                 placeholder="you@awesome.email"
-                icon="email"
               ></b-input>
             </b-field>
 
