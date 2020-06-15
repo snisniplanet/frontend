@@ -35,7 +35,13 @@
 
       <template #end>
         <b-navbar-item tag="div">
+          <span v-if="username" class="button is-secondary has-spacing is-rounded">
+            <span class="has-text-link">@</span>
+            {{username}}
+          </span>
+
           <nuxt-link
+            v-else
             :to="{ path: '/enter' }"
             class="button is-primary has-spacing is-rounded"
           >
@@ -97,6 +103,8 @@
 <script>
 import { contacts } from '~/snisni.config.json'
 
+import { mapGetters } from 'vuex'
+
 import CoolLink from '~/components/molecoles/CoolLink'
 import IconLabel from '~/components/atoms/IconLabel'
 import BuyMeACoffee from '~/components/prefabs/BuyMeACoffee'
@@ -125,7 +133,12 @@ export default {
 
       contacts
     }
-  }
+  },
+
+  computed: mapGetters({
+    userId: "user/id",
+    username: "user/username"
+  })
 }
 </script>
 
