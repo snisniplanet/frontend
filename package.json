@@ -57,7 +57,7 @@
     "prettier": "^1.19.1",
     "sass-loader": "^8.0.2",
     "ts-jest": "^25.5.1",
-    "vue-jest": "^4.0.0-0",
+    "vue-jest": "^4.0.0-beta.3",
     "vue-ts-plugin": "^0.1.0"
   }
 }
