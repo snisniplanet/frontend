@@ -7,6 +7,7 @@ export const mutations = {
   assign(user, data) {
     const newUser = new User(data.username, data.email, data.id)
 
+    //FIXME Awful syntax
     user.id = newUser.id
     user.username = newUser.username
     user.email = newUser.email
