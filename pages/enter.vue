@@ -37,7 +37,7 @@
       </b-tab-item>
 
       <b-tab-item label="Register">
-        <form class="form" @submit.prevent="register">
+        <form class="form" @submit.prevent="sendRegister">
           <div class="field">
             <label class="label">Your <span class="has-text-success">new</span> username</label>
             <div class="control">
@@ -92,10 +92,17 @@ import { mapActions } from 'vuex'
 export default {
   methods: {
     ...mapActions({
-      login: 'user/login'
+      login: 'user/login',
+      register: 'user/register'
     }),
     sendLogin($event) {
       this.login({
+        email: this.email,
+        password: this.password
+      })
+    },
+    sendRegister($event) {
+      this.register({
         username: this.username,
         email: this.email,
         password: this.password

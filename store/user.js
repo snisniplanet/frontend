@@ -24,6 +24,17 @@ export const actions = {
       .catch((err) => {
         console.error(err)
       })
+  },
+  register(user, data) {
+    this.$axios
+      .$post(endpoints.user.register, data)
+      .then((res) => {
+        user.commit('assign', res.data.user)
+        this.$axios.setToken(res.data.token, 'Bearer')
+      })
+      .catch((err) => {
+        console.error(err)
+      })
   }
 }
 
