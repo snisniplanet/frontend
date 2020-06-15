@@ -17,7 +17,11 @@ test('Creates a new User instance', () => {
 test('Invalid email errors', () => {
   let user = new User('username', 'invalid email', '312441h2hgs')
 
-  user.validate().then(errors => {
+  user.validate()
+  .then(errors => {
+    throw Error("Everything is fine and it shouldn't be")
+  })
+  .catch(errors => {
     errors = onlyWithConstraint(errors, 'isEmail')
 
     expect(errors.length > 0).toBe(true)
@@ -27,7 +31,21 @@ test('Invalid email errors', () => {
 test('Missing parameters errors', () => {
   let user = new User('username')
 
-  user.validate().then(errors => {
+  user.validate()
+  .then(errors => {
+    throw Error("Everything is fine and it shouldn't be")
+  })
+  .catch(errors => {
+    errors = onlyWithConstraint(errors, 'isNotEmpty')
+    expect(errors.length > 1).toBe(true)
+  })
+})
+
+test('Missing parameters (soft) validation', () => {
+  let user = new User('username')
+
+  user.validateSoft()
+  .then(errors => {
     errors = onlyWithConstraint(errors, 'isNotEmpty')
     expect(errors.length > 1).toBe(true)
   })
