@@ -1,6 +1,7 @@
 {
   "user": {
     "login": "/login",
-    "register": "/register"
+    "register": "/register",
+    "me": "/user/me"
   }
 }
