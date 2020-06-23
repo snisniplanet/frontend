@@ -39,7 +39,7 @@ export const mutations = {
 
 export const actions = {
   login(user, data) {
-    this.$axios
+    return this.$axios
       .$post(endpoints.user.login, data)
       .then((res) => {
         user.commit('assign', res.data.user)
@@ -50,7 +50,7 @@ export const actions = {
       })
   },
   register(user, data) {
-    this.$axios
+    return this.$axios
       .$post(endpoints.user.register, data)
       .then((res) => {
         user.commit('assign', res.data.user)
@@ -62,6 +62,7 @@ export const actions = {
   },
   get(user, token){
     user.commit('setToken', token)
+
     return this.$axios
       .$get(endpoints.user.me)
       .then((res) => {
