@@ -1,4 +1,7 @@
 {
+  "token": {
+    "name": "snisni_passport"
+  },
   "contacts": [
     {
       "name": "GitHub",
