@@ -64,7 +64,9 @@ module.exports = {
     // Doc: https://www.npmjs.com/package/@nuxtjs/style-resources
     '@nuxtjs/style-resources',
     // Doc: https://www.npmjs.com/package/nuxt-fontawesome
-    'nuxt-fontawesome'
+    'nuxt-fontawesome',
+    // Doc: https://www.npmjs.com/package/cookie-universal-nuxt
+    ['cookie-universal-nuxt', { parseJSON: false }],
   ],
   /**
    * Buefy module configuration
