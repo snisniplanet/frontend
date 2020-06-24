@@ -35,13 +35,14 @@
 
       <template #end>
         <b-navbar-item tag="div">
-          <span
+          <nuxt-link
+            to="/account"
             v-if="username"
-            class="button is-secondary has-spacing is-rounded"
+            class="button is-secondary has-spacing is-rounded has-shadow-light"
           >
             <span class="has-text-link">@</span>
             <span>{{ username }}</span>
-          </span>
+          </nuxt-link>
 
           <nuxt-link
             v-else
