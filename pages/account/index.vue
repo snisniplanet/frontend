@@ -3,21 +3,28 @@
     <div class="section">
       <div class="box has-shadow-soft">
         <p>
-          Welcome <strong>{{ user.username }}</strong
-          >!
+          Welcome <strong>{{ user.username }}</strong>!
         </p>
       </div>
+
+      <button @click="logout" class="button is-danger">Logout</button>
     </div>
   </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
   middleware: 'auth',
-  computed: mapGetters({
-    user: 'user/all'
-  })
+  computed: {
+    ...mapGetters({
+      user: 'user/all'
+    }),
+    ...mapActions({
+      //FIXME Automatically executing store action
+      logout: 'user/logout'
+    })
+  }
 }
 </script>
