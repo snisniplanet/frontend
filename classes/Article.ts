@@ -1,4 +1,4 @@
-import { Schema, DOMSerializer, Node } from 'prosemirror-model'
+import { Schema, DOMSerializer, Node, DOMParser } from 'prosemirror-model'
 
 //TODO Rename to JSONDocument
 export class Article {

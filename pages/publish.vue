@@ -7,123 +7,57 @@
             <span class="title is-1">Publisher</span>
             <sup>DEMO</sup>
           </h1>
-
-          <h3 class="subtitle is-5">
-            Built with
-            <a href="https://tiptap.scrumpy.io/" target="_blank" rel="noopener">
-              tiptap
-            </a>
-            .
-          </h3>
         </div>
       </div>
     </div>
 
     <div class="container">
-      <no-ssr>
-        <editor-menu-bar v-slot="{ commands, isActive }" :editor="editor">
-          <div>
-            <button
-              class="button is-light"
-              :class="{ 'is-primary': isActive.bold() }"
-              @click="commands.bold"
-            >
-              <b>B</b>
-            </button>
-
-            <button
-              class="button is-light"
-              :class="{ 'is-primary': isActive.italic() }"
-              @click="commands.italic"
-            >
-              <i>I</i>
-            </button>
-
-            <button
-              class="button is-light"
-              :class="{ 'is-primary': isActive.blockquote() }"
-              @click="commands.blockquote"
-            >
-              [*]
-            </button>
-
-            <button
-              class="button is-light"
-              :class="{ 'is-primary': isActive.code() }"
-              @click="commands.code"
-            >
-              @
-            </button>
-
-            <button
-              class="button is-light"
-              :class="{ 'is-primary': isActive.code_block() }"
-              @click="commands.code_block"
-            >
-              [@]
-            </button>
-          </div>
-        </editor-menu-bar>
-
-        <div>
-          <editor-content :editor="editor" class="editor is-content" />
-        </div>
-
-        <div>
-          <button class="button is-info is-large" @click="send">send</button>
-        </div>
-
-        <hr />
-
-        <div>
-          <p class="title is-2">Test output</p>
-          <div ref="result"></div>
-        </div>
-      </no-ssr>
+      <div ref="editor"></div>
+      <hr />
+      <div ref="content" v-html="content"></div>
+      <hr />
     </div>
   </div>
 </template>
 
 <script>
-import { EditorContent, EditorMenuBar, Editor } from 'tiptap'
-import { Bold, Blockquote, Code, CodeBlock, Italic } from 'tiptap-extensions'
-
-import { Article } from '~/classes/Article'
+import { schema } from 'prosemirror-schema-basic'
+import { EditorState } from 'prosemirror-state'
+import { EditorView } from 'prosemirror-view'
+import { DOMParser } from 'prosemirror-model'
+import { Renderer } from 'prosemirror-to-html-js'
 
 export default {
-  components: {
-    EditorContent,
-    EditorMenuBar
-  },
-  data() {
+  data(){
     return {
-      editor: {}
+      content: "",
+      renderer: {},
     }
   },
   mounted() {
-    this.editor = new Editor({
-      extensions: [
-        new Bold(),
-        new Blockquote(),
-        new Code(),
-        new CodeBlock(),
-        new Italic()
-      ]
+    let editor = this.$refs.editor
+    this.renderer = new Renderer()
+
+    let state = EditorState.create({
+      doc: DOMParser.fromSchema(schema).parse(editor)
     })
 
-    this.editor.focus()
-  },
-  beforeDestroy() {
-    this.editor.destroy()
-  },
-  methods: {
-    send() {
-      const doc = this.editor.getJSON()
-      const schema = this.editor.schema
-      const target = this.$refs.result
+    let view = new EditorView(editor, {
+      state,
+      dispatchTransaction: (transaction) => {
+        let newState = view.state.apply(transaction)
 
-      new Article(doc, schema).view(target)
-    }
+        let doc = newState.toJSON().doc
+
+        this.content = this.renderer.render(doc)
+
+        view.updateState(newState)
+      }
+    })
+  },
+  beforeDestroy() {},
+  methods: {
+    send() {}
   }
 }
 </script>
