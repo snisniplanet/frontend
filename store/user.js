@@ -3,14 +3,16 @@ import endpoints from '@/config/endpoints.json'
 import { error } from '@/helpers/log'
 import config from '@/snisni.config.json'
 
+let defaultToken = {
+  type: '',
+  content: ''
+}
+
 export const state = () => ({
   username: null,
   email: null,
   id: null,
-  token: {
-    type: '',
-    content: ''
-  }
+  token: defaultToken
 })
 
 export const mutations = {
@@ -39,6 +41,7 @@ export const mutations = {
     if (token) this.$axios.setToken(token, 'Bearer')
   },
   removeToken(user){
+    user.token = defaultToken
     this.$cookies.remove(config.token.name)
     this.$axios.setToken(false)
   }
@@ -87,7 +90,7 @@ export const actions = {
 
 export const getters = {
   all: (user) => user,
-  id: (user) => user ? user.id : null,
-  username: (user) => user ? user.username : null,
-  email: (user) => user ? user.email : null
+  id: (user) => user.id,
+  username: (user) => user.username,
+  email: (user) => user.email
 }
