@@ -33,7 +33,7 @@ body {
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
   }
 
-  &-light {
+  &-soft {
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
   }
 }
@@ -85,8 +85,12 @@ body {
   margin: -$spacing;
 }
 
-.has-spacing {
+.has-margin {
   margin: $spacing;
+}
+
+.has-padding {
+  padding: $spacing;
 }
 
 [contenteditable='true']:focus {

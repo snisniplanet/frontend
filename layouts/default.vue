@@ -38,7 +38,7 @@
           <nuxt-link
             to="/account"
             v-if="username"
-            class="button is-secondary has-spacing is-rounded has-shadow-light"
+            class="button is-secondary has-margin is-rounded has-shadow-soft"
           >
             <span class="has-text-link">@</span>
             <span>{{ username }}</span>
@@ -47,7 +47,7 @@
           <nuxt-link
             v-else
             :to="{ path: '/enter' }"
-            class="button is-primary has-spacing is-rounded"
+            class="button is-primary has-margin is-rounded"
           >
             Enter
           </nuxt-link>

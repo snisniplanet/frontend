@@ -8,7 +8,7 @@
             <div class="level-item">
               <p>Written by <a href="#">Full Name</a></p>
 
-              <div class="image is-64x64 is-rounded has-spacing">
+              <div class="image is-64x64 is-rounded has-margin">
                 <img src="~assets/img/profile-pic.png" />
               </div>
             </div>

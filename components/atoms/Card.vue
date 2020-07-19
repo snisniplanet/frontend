@@ -1,5 +1,5 @@
 <template>
-  <div class="card is-rounded has-shadow-light">
+  <div class="card is-rounded has-shadow-soft">
     <div v-if="thumbnail" class="card-image">
       <figure class="image is-rounded is-4by3">
         <img :src="thumbnail" alt />
