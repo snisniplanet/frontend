@@ -12,9 +12,13 @@
     </div>
 
     <div class="container">
-      <div ref="editor"></div>
+      <div ref="editor" class="is-content"></div>
       <hr />
-      <div ref="content" v-html="content"></div>
+      <div
+        ref="content"
+        v-html="content"
+        class="is-rounded has-shadow-soft has-padding is-content"
+      ></div>
       <hr />
     </div>
   </div>
