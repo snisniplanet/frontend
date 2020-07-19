@@ -25,10 +25,7 @@
 
           <div class="field">
             <div class="control">
-              <b-button
-                class="button is-large"
-                native-type="submit"
-              >
+              <b-button class="button is-large" native-type="submit">
                 Enter
               </b-button>
             </div>
@@ -39,12 +36,11 @@
       <b-tab-item label="Register">
         <form class="form" @submit.prevent="sendRegister">
           <div class="field">
-            <label class="label">Your <span class="has-text-success">new</span> username</label>
+            <label class="label"
+              >Your <span class="has-text-success">new</span> username</label
+            >
             <div class="control">
-              <b-input
-                v-model="username"
-                type="text"
-              />
+              <b-input v-model="username" type="text" />
             </div>
           </div>
 
@@ -60,7 +56,9 @@
           </div>
 
           <div class="field">
-            <label class="label">Your <span class="has-text-success">new</span> password</label>
+            <label class="label"
+              >Your <span class="has-text-success">new</span> password</label
+            >
             <div class="control">
               <input
                 v-model="password"
@@ -73,10 +71,7 @@
 
           <div class="field">
             <div class="control">
-              <b-button
-                class="button is-large"
-                native-type="submit"
-              >
+              <b-button class="button is-large" native-type="submit">
                 Welcome!
               </b-button>
             </div>

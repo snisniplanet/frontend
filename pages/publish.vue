@@ -16,8 +16,8 @@
       <hr />
       <div
         ref="content"
-        v-html="content"
         class="is-rounded has-shadow-soft has-padding is-content"
+        v-html="content"
       ></div>
       <hr />
     </div>
@@ -32,26 +32,26 @@ import { DOMParser } from 'prosemirror-model'
 import { Renderer } from 'prosemirror-to-html-js'
 
 export default {
-  data(){
+  data() {
     return {
-      content: "",
-      renderer: {},
+      content: '',
+      renderer: {}
     }
   },
   mounted() {
-    let editor = this.$refs.editor
+    const editor = this.$refs.editor
     this.renderer = new Renderer()
 
-    let state = EditorState.create({
+    const state = EditorState.create({
       doc: DOMParser.fromSchema(schema).parse(editor)
     })
 
-    let view = new EditorView(editor, {
+    const view = new EditorView(editor, {
       state,
       dispatchTransaction: (transaction) => {
-        let newState = view.state.apply(transaction)
+        const newState = view.state.apply(transaction)
 
-        let doc = newState.toJSON().doc
+        const doc = newState.toJSON().doc
 
         this.content = this.renderer.render(doc)
 

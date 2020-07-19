@@ -66,7 +66,7 @@ module.exports = {
     // Doc: https://www.npmjs.com/package/nuxt-fontawesome
     'nuxt-fontawesome',
     // Doc: https://www.npmjs.com/package/cookie-universal-nuxt
-    ['cookie-universal-nuxt', { parseJSON: false }],
+    ['cookie-universal-nuxt', { parseJSON: false }]
   ],
   /**
    * Buefy module configuration

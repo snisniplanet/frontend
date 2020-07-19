@@ -73,6 +73,6 @@ export default {
   async asyncData({ $axios }) {
     const articles = await $axios.$get('articles')
     return { articles }
-  },
+  }
 }
 </script>

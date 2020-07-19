@@ -36,8 +36,8 @@
       <template #end>
         <b-navbar-item tag="div">
           <nuxt-link
-            to="/account"
             v-if="username"
+            to="/account"
             class="button is-secondary has-margin is-rounded has-shadow-soft"
           >
             <span class="has-text-link">@</span>
