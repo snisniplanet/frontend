@@ -21,6 +21,11 @@ export const mutations = {
     user.username = newUser.username
     user.email = newUser.email
   },
+  clear(user){
+    user.id = null
+    user.username = null
+    user.email = null
+  },
   saveToken(user, token) {
     user.token = token
     this.$axios.setToken(token, 'Bearer')
@@ -32,6 +37,10 @@ export const mutations = {
     const token = this.$cookies.get(config.token.name)
 
     if (token) this.$axios.setToken(token, 'Bearer')
+  },
+  removeToken(user){
+    this.$cookies.remove(config.token.name)
+    this.$axios.setToken(false)
   }
 }
 
@@ -69,12 +78,16 @@ export const actions = {
       .catch((err) => {
         error(err)
       })
+  },
+  logout(user){
+    user.commit('removeToken')
+    user.commit('clear')
   }
 }
 
 export const getters = {
   all: (user) => user,
-  id: (user) => user.id,
-  username: (user) => user.username,
-  email: (user) => user.email
+  id: (user) => user ? user.id : null,
+  username: (user) => user ? user.username : null,
+  email: (user) => user ? user.email : null
 }
