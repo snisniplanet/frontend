@@ -3,7 +3,7 @@
     <div class="intersection-top hero is-dark has-waves-background has-shadow">
       <div class="hero-body">
         <div class="container">
-          <h1 class="title is-1">This article is the best, don't you think?</h1>
+          <h1 class="title is-1">{{title}}</h1>
           <div class="level">
             <div class="level-item">
               <p>Written by <a href="#">Full Name</a></p>
@@ -25,23 +25,30 @@
           <img src="https://picsum.photos/1000/400?grayscale" />
         </div>
 
-        <div class="section is-content">
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa,
-            voluptatibus perspiciatis perferendis eligendi accusantium aliquid
-            nostrum nulla enim. Aliquam quis laborum voluptate nostrum atque
-            modi consequatur molestiae vitae quisquam voluptatibus?
-          </p>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam
-            fuga fugit neque quas dolore aliquid asperiores reiciendis eveniet
-            similique earum, excepturi amet, placeat vitae obcaecati eaque
-            praesentium officiis. Voluptatem, accusantium!
-          </p>
-        </div>
+        <div class="section is-content" v-html="parsedContent"></div>
       </div>
     </div>
   </div>
 </template>
 
-<style></style>
+<script>
+import { Renderer } from 'prosemirror-to-html-js'
+
+export default {
+  async asyncData({ $axios, params }){
+    let article = await $axios.$get(`articles/${params.url}`)
+
+    return article
+  },
+  data(){
+    return {
+      renderer: new Renderer(),
+    }
+  },
+  computed: {
+    parsedContent(){
+      return this.renderer.render(this.content)
+    }
+  }
+}
+</script>
