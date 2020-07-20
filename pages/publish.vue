@@ -29,6 +29,8 @@ import { schema } from 'prosemirror-schema-basic'
 import { EditorState } from 'prosemirror-state'
 import { EditorView } from 'prosemirror-view'
 import { DOMParser } from 'prosemirror-model'
+import { keymap } from 'prosemirror-keymap'
+import { baseKeymap } from 'prosemirror-commands'
 import { Renderer } from 'prosemirror-to-html-js'
 
 export default {
@@ -43,7 +45,10 @@ export default {
     this.renderer = new Renderer()
 
     const state = EditorState.create({
-      doc: DOMParser.fromSchema(schema).parse(editor)
+      doc: DOMParser.fromSchema(schema).parse(editor),
+      plugins: [
+        keymap(baseKeymap)
+      ]
     })
 
     const view = new EditorView(editor, {
