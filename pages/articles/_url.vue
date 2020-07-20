@@ -4,6 +4,7 @@
       <div class="hero-body">
         <div class="container">
           <h1 class="title is-1">{{title}}</h1>
+          <p class="subtitle is-4">{{snippet}}</p>
           <div class="level">
             <div class="level-item">
               <p>Written by <a href="#">Full Name</a></p>
