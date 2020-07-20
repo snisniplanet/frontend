@@ -13,18 +13,20 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex'
+import { mapGetters } from 'vuex'
 
 export default {
   middleware: 'auth',
   computed: {
     ...mapGetters({
       user: 'user/all'
-    }),
-    ...mapActions({
-      //FIXME Automatically executing store action
-      logout: 'user/logout'
     })
+  },
+  methods: {
+    logout(){
+      // NOTE Vuex's mapActions helper is broken: its apply method canno execute properly since it's read-only
+      this.$store.dispatch('user/logout')
+    }
   }
 }
 </script>
