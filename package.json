@@ -5,7 +5,7 @@
   "author": "Mattia Sinisi",
   "private": true,
   "engines": {
-    "node": "13",
+    "node": "12",
     "npm": "6.14.4"
   },
   "scripts": {
