@@ -78,7 +78,7 @@
           <aside class="column">
             <CoolLink to="/inspire" icon="book">About</CoolLink>
 
-            <CoolLink to="#" icon="lock">Privacy Policy</CoolLink>
+            <CoolLink to="https://www.iubenda.com/privacy-policy/56192331" icon="lock">Privacy Policy</CoolLink>
 
             <CoolLink to="#" icon="bug">Spotted a bug?</CoolLink>
           </aside>
