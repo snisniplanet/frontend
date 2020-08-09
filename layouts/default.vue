@@ -80,7 +80,7 @@
 
             <CoolLink to="https://www.iubenda.com/privacy-policy/56192331" icon="lock">Privacy Policy</CoolLink>
 
-            <CoolLink to="#" icon="bug">Spotted a bug?</CoolLink>
+            <CoolLink to="https://github.com/snisniplanet/frontend/issues" icon="bug">Spotted a bug?</CoolLink>
           </aside>
 
           <aside class="column">
