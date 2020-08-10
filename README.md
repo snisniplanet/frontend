@@ -2,7 +2,7 @@
 
 Built with Nuxt.js
 
-
+![Issues](https://img.shields.io/github/issues/snisniplanet/frontend?style=for-the-badge)
 
 ## Build Setup
 
@@ -48,5 +48,8 @@ npm run build
 npm start
 ```
 
+## Share this project
+
+![Tweet](https://img.shields.io/twitter/url?color=orange&label=Tweet%20about%20this&logo=twitter&logoColor=orange&style=for-the-badge&url=https%3A%2F%2Fgithub.com%2Fsnisniplanet)
 
 ##### For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
