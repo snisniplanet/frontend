@@ -17,6 +17,7 @@
     <section class="py-5 section-bubble2">
       <div class="container">
         <Card
+          thumbnail="https://i.ibb.co/NC945DG/20200813-003636-0000.png"
           title="Mattia Sinisi"
           author-pic="https://secure.gravatar.com/avatar/b53f8552447f5ef1deefe2d985a5e120"
           username="sinisimattia"
@@ -28,6 +29,7 @@
     <section class="py-5 section-bubble3">
       <div class="container">
         <Card
+          thumbnail="https://i.ibb.co/D98wThr/20200813-003636-0001.png"
           title="Un team dedicato"
         />
       </div>
