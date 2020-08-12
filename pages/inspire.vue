@@ -17,7 +17,6 @@
     <section class="py-5 section-bubble2">
       <div class="container">
         <Card
-          thumbnail="https://picsum.photos/500?grayscale"
           title="Mattia Sinisi"
           author-pic="https://secure.gravatar.com/avatar/b53f8552447f5ef1deefe2d985a5e120"
           username="sinisimattia"
@@ -29,7 +28,6 @@
     <section class="py-5 section-bubble3">
       <div class="container">
         <Card
-          thumbnail="https://picsum.photos/500?grayscale"
           title="Un team dedicato"
         />
       </div>
