@@ -11,7 +11,7 @@
       </div>
     </div>
 
-    <div class="container">
+    <div class="container section box">
       <div ref="editor" class="is-content"></div>
       <hr />
       <div
