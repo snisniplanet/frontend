@@ -7,13 +7,6 @@
             <span class="title is-1">Publisher</span>
             <sup>DEMO</sup>
           </h1>
-
-          <h3 class="subtitle is-5">
-            Built with
-            <a href="https://tiptap.scrumpy.io/" target="_blank" rel="noopener"
-              >tiptap</a
-            >.
-          </h3>
         </div>
       </div>
     </div>
