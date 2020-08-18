@@ -31,13 +31,13 @@
               <i>I</i>
             </button>
 
-            <button
+            <!-- <button
               class="button is-light"
               :class="{ 'is-primary': isActive.blockquote() }"
               @click="commands.blockquote"
             >
               [*]
-            </button>
+            </button> -->
 
             <button
               class="button is-light"
@@ -57,8 +57,13 @@
           </div>
         </editor-menu-bar>
 
-        <div class="has-shadow">
+        <div class="box">
           <editor-content :editor="editor" class="editor"/>
+        </div>
+
+        <div>
+          <p class="title is-2">Result</p>
+          <div class="box" v-html="result"></div>
         </div>
       </no-ssr>
     </div>
@@ -68,6 +73,7 @@
 <script>
 import { EditorContent, EditorMenuBar, Editor } from 'tiptap'
 import { Bold, Blockquote, Code, CodeBlock, Italic } from 'tiptap-extensions'
+import { Renderer } from 'prosemirror-to-html-js'
 
 export default {
   components: {
@@ -76,10 +82,13 @@ export default {
   },
   data() {
     return {
-      editor: {}
+      editor: {},
+      result: '',
     }
   },
   mounted() {
+    const renderer = new Renderer()
+
     this.editor = new Editor({
       extensions: [
         new Bold(),
@@ -87,12 +96,15 @@ export default {
         new Code(),
         new CodeBlock(),
         new Italic(),
-      ]
+      ],
+      onUpdate: ({ getJSON }) => {
+        this.result = renderer.render(getJSON())
+      }
     })
   },
   beforeDestroy() {
     this.editor.destroy()
-  }
+  },
 }
 </script>
 
