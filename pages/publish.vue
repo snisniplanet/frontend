@@ -11,71 +11,93 @@
       </div>
     </div>
 
-    <div class="container section box">
-      <div ref="editor" class="is-content"></div>
-      <hr />
-      <div
-        ref="content"
-        class="is-rounded has-shadow-soft has-padding is-content"
-        v-html="content"
-      ></div>
-      <hr />
+    <div class="container">
+      <no-ssr>
+        <editor-menu-bar :editor="editor" v-slot="{ commands, isActive }">
+          <div>
+            <button
+              class="button is-light"
+              :class="{ 'is-primary': isActive.bold() }"
+              @click="commands.bold"
+            >
+              <b>B</b>
+            </button>
+
+            <button
+              class="button is-light"
+              :class="{ 'is-primary': isActive.italic() }"
+              @click="commands.italic"
+            >
+              <i>I</i>
+            </button>
+
+            <button
+              class="button is-light"
+              :class="{ 'is-primary': isActive.blockquote() }"
+              @click="commands.blockquote"
+            >
+              [*]
+            </button>
+
+            <button
+              class="button is-light"
+              :class="{ 'is-primary': isActive.code() }"
+              @click="commands.code"
+            >
+              @
+            </button>
+
+            <button
+              class="button is-light"
+              :class="{ 'is-primary': isActive.code_block() }"
+              @click="commands.code_block"
+            >
+              [@]
+            </button>
+          </div>
+        </editor-menu-bar>
+
+        <div class="has-shadow">
+          <editor-content :editor="editor" class="editor"/>
+        </div>
+      </no-ssr>
     </div>
   </div>
 </template>
 
 <script>
-import { schema } from 'prosemirror-schema-basic'
-import { EditorState } from 'prosemirror-state'
-import { EditorView } from 'prosemirror-view'
-import { DOMParser } from 'prosemirror-model'
-import { keymap } from 'prosemirror-keymap'
-import { baseKeymap, toggleMark } from 'prosemirror-commands'
-import { Renderer } from 'prosemirror-to-html-js'
+import { EditorContent, EditorMenuBar, Editor } from 'tiptap'
+import { Bold, Blockquote, Code, CodeBlock, Italic } from 'tiptap-extensions'
 
 export default {
+  components: {
+    EditorContent,
+    EditorMenuBar
+  },
   data() {
     return {
-      content: '',
-      renderer: {}
+      editor: {}
     }
   },
   mounted() {
-    const editor = this.$refs.editor
-    this.renderer = new Renderer()
-
-    const state = EditorState.create({
-      doc: DOMParser.fromSchema(schema).parse(editor),
-      plugins: [
-        keymap({
-          ...baseKeymap,
-          "Ctrl-b": toggleMark(schema.marks.bold)
-        })
+    this.editor = new Editor({
+      extensions: [
+        new Bold(),
+        new Blockquote(),
+        new Code(),
+        new CodeBlock(),
+        new Italic(),
       ]
     })
-
-    const view = new EditorView(editor, {
-      state,
-      dispatchTransaction: (transaction) => {
-        const newState = view.state.apply(transaction)
-
-        const doc = newState.toJSON().doc
-
-        this.content = this.renderer.render(doc)
-
-        view.updateState(newState)
-      }
-    })
   },
-  beforeDestroy() {},
-  methods: {
-    send() {}
+  beforeDestroy() {
+    this.editor.destroy()
   }
 }
 </script>
 
 <style scoped lang="scss">
-.editor {
+.editor{
   padding: 10px 20px;
 }
 </style>
