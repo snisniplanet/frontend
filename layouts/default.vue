@@ -84,14 +84,7 @@
           </aside>
 
           <aside class="column">
-            <b-field label="Our newsletter" message="Don't worry, we hate spam">
-              <b-input
-                size="is-medium"
-                type="email"
-                placeholder="you@awesome.email"
-              ></b-input>
-            </b-field>
-
+            <NewsletterForm />
             <BuyMeACoffee />
           </aside>
         </section>
@@ -111,12 +104,14 @@ import { contacts } from '~/snisni.config.json'
 import CoolLink from '~/components/molecoles/CoolLink'
 import IconLabel from '~/components/atoms/IconLabel'
 import BuyMeACoffee from '~/components/prefabs/BuyMeACoffee'
+import NewsletterForm from '~/components/prefabs/NewsletterForm'
 
 export default {
   components: {
     CoolLink,
     IconLabel,
-    BuyMeACoffee
+    BuyMeACoffee,
+    NewsletterForm,
   },
 
   data() {
