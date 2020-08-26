@@ -14,7 +14,6 @@
           position="is-centered"
         >
           <b-input
-            size="is-medium"
             type="email"
             placeholder="Our newsletter"
             value=""
@@ -25,7 +24,7 @@
 
           <p class="control">
             <b-button
-              type="is-medium is-info"
+              type="is-info"
               native-type="submit"
               name="subscribe"
               id="mc-embedded-subscribe"
