@@ -84,9 +84,9 @@
           <aside class="column">
             <CoolLink to="/inspire" icon="book">About</CoolLink>
 
-            <CoolLink to="https://www.iubenda.com/privacy-policy/56192331" icon="lock">Privacy Policy</CoolLink>
+            <CoolLink :to="links.privacy_policy" icon="lock">Privacy Policy</CoolLink>
 
-            <CoolLink to="https://github.com/snisniplanet/frontend/issues" icon="bug">Spotted a bug?</CoolLink>
+            <CoolLink :to="links.report_issues" icon="bug">Spotted a bug?</CoolLink>
           </aside>
 
           <aside class="column">
@@ -104,7 +104,7 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import { contacts } from '~/snisni.config.json'
+import { contacts, links } from '~/snisni.config.json'
 
 import CoolLink from '~/components/molecoles/CoolLink'
 import IconLabel from '~/components/atoms/IconLabel'
@@ -133,7 +133,7 @@ export default {
           to: { name: 'inspire' }
         }
       ],
-
+      links,
       contacts
     }
   },

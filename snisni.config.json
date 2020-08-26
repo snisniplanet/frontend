@@ -2,8 +2,7 @@
   "token": {
     "name": "snisni_passport"
   },
-  "contacts": [
-    {
+  "contacts": [{
       "name": "GitHub",
       "icon": {
         "pack": "fab",
@@ -19,5 +18,10 @@
       },
       "href": "mailto:team@snisni.it"
     }
-  ]
+  ],
+  "links": {
+    "privacy_policy": "https://www.iubenda.com/privacy-policy/56192331",
+    "report_issues": "https://github.com/snisniplanet/frontend/issues"
+  }
+
 }
