@@ -10,7 +10,9 @@
       novalidate
     >
       <div id="mc_embed_signup_scroll">
-        <b-field position="is-centered">
+        <b-field
+          position="is-centered"
+        >
           <b-input
             size="is-medium"
             type="email"
@@ -19,8 +21,6 @@
             name="EMAIL"
             id="mce-EMAIL"
             class="is-block"
-            required
-            expanded
           ></b-input>
 
           <p class="control">
@@ -28,7 +28,6 @@
               type="is-medium is-info"
               native-type="submit"
               name="subscribe"
-              class="is-block"
               id="mc-embedded-subscribe"
             >
               Subscribe

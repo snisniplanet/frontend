@@ -63,6 +63,10 @@
 
     <section class="footer">
       <div class="container">
+        <section class="section">
+          <NewsletterForm />
+        </section>
+
         <section class="columns">
           <aside class="column">
             <CoolLink
@@ -84,7 +88,6 @@
           </aside>
 
           <aside class="column">
-            <NewsletterForm />
             <BuyMeACoffee />
           </aside>
         </section>
