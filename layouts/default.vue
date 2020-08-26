@@ -64,7 +64,9 @@
     <section class="footer">
       <div class="container">
         <section class="section">
+          <p class="title has-text-centered is-2">Never miss an update!</p>
           <NewsletterForm />
+          <p class="subtitle has-text-centered">Don't worry, we hate spam.</p>
         </section>
 
         <section class="columns">
